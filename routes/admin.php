@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\ProfileController;
+use App\Http\Controllers\Backend\SliderController;
 
 // Admin Route
     Route::get('dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
@@ -10,5 +11,6 @@ use App\Http\Controllers\Backend\ProfileController;
     Route::post('profile/update', [ProfileController::class, 'updateProfile'])->name('profile.update');
     Route::post('profile/update/password', [ProfileController::class, 'updatePassword'])->name('update.password');
 
-
+//Slider Route
+     Route::resource('slider', SliderController::class);
     
