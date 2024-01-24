@@ -23,12 +23,12 @@ class SliderDataTable extends DataTable
     {
         return (new EloquentDataTable($query))
             ->addColumn('action', function($query){
-                 $editButton="<a href='".route('admin.slider.edit', $query->id)."' class='btn btn-info'><i class='far fa-edit'></i></a>";
-                 $deleteButton="<a href='".route('admin.slider.destroy', $query->id)."' class='btn btn-danger mt-2'><i class='far fa-trash-alt'></i></a>";
+                 $editButton="<a href='".route('admin.slider.edit', $query->id)."' class='btn btn-info'>Edit</a>";
+                 $deleteButton="<a href='".route('admin.slider.destroy', $query->id)."' class='btn btn-danger ml-2'>Delete</a>";
                  
 
                  return $editButton.$deleteButton;
-                 })
+            })
             ->addColumn('banner', function($query){
                 return $img="<img width='200px' src='".asset($query->banner)."' ></img>";
             })
@@ -81,6 +81,7 @@ class SliderDataTable extends DataTable
                   ->printable(false)
                   ->width(60)
                   ->addClass('text-center'),
+            
         ];
     }
 
